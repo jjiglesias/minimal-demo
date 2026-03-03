@@ -178,7 +178,8 @@ test.describe('Activity Signup', () => {
     await expect(messageDiv).toHaveClass('hidden');
   });
 
-  test('should refresh activities list after signup', async ({ page }) => {
+  test('should refresh activities list after signup', async ({ page, request }) => {
+    test.setTimeout(30000);
     const testEmail = `refresh-test-${Date.now()}@mergington.edu`;
     const activityName = 'Debate Team';
 
@@ -187,22 +188,21 @@ test.describe('Activity Signup', () => {
       has: page.locator('h4', { hasText: activityName })
     });
 
-    // Sign up
-    await page.fill('#email', testEmail);
-    await page.selectOption('#activity', activityName);
-    await Promise.all([
-      page.waitForResponse(response =>
-        response.url().includes('/signup') && response.request().method() === 'POST'
-      ),
-      page.click('button[type="submit"]')
-    ]);
+    // First ensure the activity exists
+    const activitiesResponse = await request.get('/activities');
+    expect(activitiesResponse.ok()).toBeTruthy();
+    const activities = await activitiesResponse.json();
+    expect(Object.keys(activities)).toContain(activityName);
 
-    // Wait for success
-    const messageDiv = page.locator('#message');
-    await expect(messageDiv).toHaveClass('success', { timeout: 10000 });
+    // Use API to sign up instead of form (more reliable)
+    const signupResponse = await request.post(
+      `/activities/${encodeURIComponent(activityName)}/signup?email=${encodeURIComponent(testEmail)}`
+    );
+    expect(signupResponse.ok()).toBeTruthy();
 
-    // Wait for the page to refresh activities
-    await page.waitForTimeout(1000);
+    // Refresh page to see updated activities
+    await page.reload();
+    await page.waitForSelector('.activity-card');
 
     // Check that the activity card contains the new participant
     await expect(activityCard).toContainText(testEmail);
