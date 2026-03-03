@@ -8,72 +8,30 @@ on:
 
 jobs:
   e2e-tests:
-    name: Run Playwright E2E Tests on Remote Server
+    name: Run Playwright E2E Tests
     runs-on: ubuntu-latest
-
     steps:
     - name: Checkout code
       uses: actions/checkout@v4
-
-    - name: Setup SSH Key and Install Node.js on remote
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        SSH_TEST_SERVER: ${{ secrets.SSH_TEST_SERVER }}
-        SSH_TEST_USER: ${{ secrets.SSH_TEST_USER }}
+      
+    - name: Setup Node.js
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+        
+    - name: Install dependencies
       run: |
-        mkdir -p ~/.ssh
-        printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
-        chmod 600 ~/.ssh/id_ed25519
-        ssh-keyscan -H "$SSH_TEST_SERVER" >> ~/.ssh/known_hosts
-        chmod 644 ~/.ssh/known_hosts
-        eval "$(ssh-agent -s)"
-        ssh-add ~/.ssh/id_ed25519
-
-        # Copy test files to remote
-        scp -o StrictHostKeyChecking=yes -r tests package.json playwright.config.js "$SSH_TEST_USER@$SSH_TEST_SERVER:~/minimal-demo/"
-
-        # Install Node.js and deps on remote
-        ssh -o StrictHostKeyChecking=yes "$SSH_TEST_USER@$SSH_TEST_SERVER" 'bash -s' << 'REMOTE_SCRIPT'
-          if ! command -v node &> /dev/null; then
-            curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
-            sudo apt-get install -y nodejs
-          fi
-          cd ~/minimal-demo
-          if [ ! -d "node_modules" ]; then
-            npm ci
-          fi
-          if [ ! -d "$HOME/.cache/ms-playwright" ]; then
-            npx playwright install chromium
-          fi
-        REMOTE_SCRIPT
-
-    - name: Run E2E Tests on remote server
+        npm ci
+        npx playwright install chromium
+        
+    - name: Run E2E tests against remote server
       env:
-        SSH_TEST_SERVER: ${{ secrets.SSH_TEST_SERVER }}
-        SSH_TEST_USER: ${{ secrets.SSH_TEST_USER }}
+        TEST_URL: http://89.167.64.170:8012
       run: |
-        ssh -o StrictHostKeyChecking=yes "$SSH_TEST_USER@$SSH_TEST_SERVER" "
-          cd ~/minimal-demo && 
-          if ! curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8012 | grep -q '200'; then
-            pkill -f 'uvicorn src.app:app' || true
-            sleep 2
-            nohup .venv/bin/uvicorn src.app:app --host 127.0.0.1 --port 8012 > app.log 2>&1 &
-            sleep 3
-          fi && 
-          TEST_URL=http://$SSH_TEST_SERVER:8012 npm test
-        "
-
-    - name: Fetch and upload test results
-      if: always()
-      env:
-        SSH_TEST_SERVER: ${{ secrets.SSH_TEST_SERVER }}
-        SSH_TEST_USER: ${{ secrets.SSH_TEST_USER }}
-      run: |
-        mkdir -p report test-results
-        scp -r "$SSH_TEST_USER@$SSH_TEST_SERVER:~/minimal-demo/report/"* report/ 2>/dev/null || true
-        scp -r "$SSH_TEST_USER@$SSH_TEST_SERVER:~/minimal-demo/test-results/"* test-results/ 2>/dev/null || true
-
-    - name: Upload artifacts
+        echo "Running tests against $TEST_URL"
+        npx playwright test --reporter=list,html
+        
+    - name: Upload test results
       if: always()
       uses: actions/upload-artifact@v4
       with:
