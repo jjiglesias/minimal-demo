@@ -29,54 +29,80 @@ jobs:
         ssh-add ~/.ssh/id_ed25519
         echo "SSH key configured successfully"
 
+    - name: Install Node.js and dependencies on remote server
+      env:
+        SSH_USER: ${{ secrets.SSH_TEST_USER }}
+        SSH_HOST: ${{ secrets.SSH_TEST_SERVER }}
+      run: |
+        echo "Installing Node.js and project dependencies on remote server..."
+        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes ${SSH_USER}@${SSH_HOST} << 'EOF'
+          set -e
+
+          # Check if Node.js is installed, if not install it
+          if ! command -v node &> /dev/null; then
+            echo "Node.js not found, installing..."
+            curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
+            sudo apt-get install -y nodejs
+          fi
+
+          node --version
+          npm --version
+
+          # Install Playwright dependencies if needed
+          if ! command -v xvfb-run &> /dev/null; then
+            echo "Installing system dependencies for Playwright..."
+            sudo apt-get update
+            sudo apt-get install -y libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
+              libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libasound2t64 xvfb
+          fi
+EOF
+
     - name: Run E2E Tests on Remote Server
       env:
         SSH_USER: ${{ secrets.SSH_TEST_USER }}
         SSH_HOST: ${{ secrets.SSH_TEST_SERVER }}
       run: |
         echo "Connecting to remote server ${SSH_HOST} as ${SSH_USER}..."
+        # Copy test files to remote server
+        scp -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes -r tests package.json playwright.config.js ${SSH_USER}@${SSH_HOST}:~/minimal-demo/
+
         ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes ${SSH_USER}@${SSH_HOST} << 'EOF'
           set -e
 
-          # Navigate to project directory
-          cd ~/minimal-demo || exit 1
+          cd ~/minimal-demo
 
-          # Pull latest changes from origin
-          git fetch origin
-          git reset --hard origin/fixes
+          # Install npm dependencies
+          if [ ! -d "node_modules" ]; then
+            echo "Installing Node.js dependencies..."
+            npm ci
+          else
+            echo "Node modules already installed"
+          fi
+
+          # Install Playwright browsers if needed
+          if [ ! -d "$HOME/.cache/ms-playwright/chromium-"* ] 2>/dev/null; then
+            echo "Installing Playwright browsers..."
+            npx playwright install chromium
+          else
+            echo "Playwright browsers already installed"
+          fi
 
           # Ensure app is running
           if ! curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8012 | grep -q "200"; then
             echo "Starting application..."
-            # Kill any existing uvicorn process
             pkill -f "uvicorn src.app:app" || true
             sleep 2
-            # Start app in background
             nohup .venv/bin/uvicorn src.app:app --host 127.0.0.1 --port 8012 > app.log 2>&1 &
             sleep 3
           fi
 
-          # Check if app is accessible
           echo "Checking application status..."
-          curl -s http://127.0.0.1:8012 | head -20
+          curl -s http://127.0.0.1:8012 | head -5
 
-          # Install Node.js dependencies if needed
-          if [ ! -d "node_modules" ]; then
-            echo "Installing Node.js dependencies..."
-            npm ci
-          fi
-
-          # Install Playwright browsers if needed
-          if [ ! -d "$HOME/.cache/ms-playwright" ]; then
-            echo "Installing Playwright browsers..."
-            npx playwright install chromium
-          fi
-
-          # Copy test files from GitHub runner to ensure latest tests are used
-          echo "Running E2E tests against http://${SSH_HOST}:8012"
+          # Run E2E tests
+          echo "Running Playwright E2E tests..."
           TEST_URL=http://${SSH_HOST}:8012 npm test
 
-          # Copy test results back for artifact upload
           echo "Tests completed!"
         EOF
 
@@ -86,9 +112,7 @@ jobs:
         SSH_USER: ${{ secrets.SSH_TEST_USER }}
         SSH_HOST: ${{ secrets.SSH_TEST_SERVER }}
       run: |
-        # Create local directories
         mkdir -p report test-results
-        # Copy test results from remote server
         scp -i ~/.ssh/id_ed25519 -r ${SSH_USER}@${SSH_HOST}:~/minimal-demo/report/* report/ 2>/dev/null || true
         scp -i ~/.ssh/id_ed25519 -r ${SSH_USER}@${SSH_HOST}:~/minimal-demo/test-results/* test-results/ 2>/dev/null || true
 
