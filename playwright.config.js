@@ -31,6 +31,9 @@ module.exports = defineConfig({
     /* Base URL to use in actions like `await page.goto('/')` */
     baseURL: process.env.TEST_URL || 'http://127.0.0.1:8012',
 
+    /* Ignore HTTPS errors (for self-signed certificates) */
+    ignoreHTTPSErrors: true,
+
     /* Collect trace when retrying the failed test */
     trace: 'on-first-retry',
 

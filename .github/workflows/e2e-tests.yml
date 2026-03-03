@@ -26,7 +26,7 @@ jobs:
         
     - name: Run E2E tests against remote server
       env:
-        TEST_URL: http://89.167.64.170:8012
+        TEST_URL: https://89.167.64.170:8012
       run: |
         echo "Running tests against $TEST_URL"
         npx playwright test --reporter=list,html
