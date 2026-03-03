@@ -15,108 +15,65 @@ jobs:
     - name: Checkout code
       uses: actions/checkout@v4
 
-    - name: Setup SSH Key
+    - name: Setup SSH Key and Install Node.js on remote
+      env:
+        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+        SSH_TEST_SERVER: ${{ secrets.SSH_TEST_SERVER }}
+        SSH_TEST_USER: ${{ secrets.SSH_TEST_USER }}
       run: |
         mkdir -p ~/.ssh
-        # Write the private key to id_ed25519 file
-        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_ed25519
+        printf '%s\n' "$SSH_PRIVATE_KEY" > ~/.ssh/id_ed25519
         chmod 600 ~/.ssh/id_ed25519
-        # Add server to known hosts
-        ssh-keyscan -H ${{ secrets.SSH_TEST_SERVER }} >> ~/.ssh/known_hosts
+        ssh-keyscan -H "$SSH_TEST_SERVER" >> ~/.ssh/known_hosts
         chmod 644 ~/.ssh/known_hosts
-        # Start ssh-agent
         eval "$(ssh-agent -s)"
         ssh-add ~/.ssh/id_ed25519
-        echo "SSH key configured successfully"
 
-    - name: Install Node.js and dependencies on remote server
-      env:
-        SSH_USER: ${{ secrets.SSH_TEST_USER }}
-        SSH_HOST: ${{ secrets.SSH_TEST_SERVER }}
-      run: |
-        echo "Installing Node.js and project dependencies on remote server..."
-        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes ${SSH_USER}@${SSH_HOST} << 'EOF'
-          set -e
+        # Copy test files to remote
+        scp -o StrictHostKeyChecking=yes -r tests package.json playwright.config.js "$SSH_TEST_USER@$SSH_TEST_SERVER:~/minimal-demo/"
 
-          # Check if Node.js is installed, if not install it
+        # Install Node.js and deps on remote
+        ssh -o StrictHostKeyChecking=yes "$SSH_TEST_USER@$SSH_TEST_SERVER" 'bash -s' << 'REMOTE_SCRIPT'
           if ! command -v node &> /dev/null; then
-            echo "Node.js not found, installing..."
             curl -fsSL https://deb.nodesource.com/setup_20.x | sudo -E bash -
             sudo apt-get install -y nodejs
           fi
-
-          node --version
-          npm --version
-
-          # Install Playwright dependencies if needed
-          if ! command -v xvfb-run &> /dev/null; then
-            echo "Installing system dependencies for Playwright..."
-            sudo apt-get update
-            sudo apt-get install -y libnss3 libnspr4 libatk1.0-0 libatk-bridge2.0-0 libcups2 libdrm2 \
-              libxkbcommon0 libxcomposite1 libxdamage1 libxfixes3 libxrandr2 libgbm1 libasound2t64 xvfb
-          fi
-EOF
-
-    - name: Run E2E Tests on Remote Server
-      env:
-        SSH_USER: ${{ secrets.SSH_TEST_USER }}
-        SSH_HOST: ${{ secrets.SSH_TEST_SERVER }}
-      run: |
-        echo "Connecting to remote server ${SSH_HOST} as ${SSH_USER}..."
-        # Copy test files to remote server
-        scp -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes -r tests package.json playwright.config.js ${SSH_USER}@${SSH_HOST}:~/minimal-demo/
-
-        ssh -i ~/.ssh/id_ed25519 -o StrictHostKeyChecking=yes ${SSH_USER}@${SSH_HOST} << 'EOF'
-          set -e
-
           cd ~/minimal-demo
-
-          # Install npm dependencies
           if [ ! -d "node_modules" ]; then
-            echo "Installing Node.js dependencies..."
             npm ci
-          else
-            echo "Node modules already installed"
           fi
-
-          # Install Playwright browsers if needed
-          if [ ! -d "$HOME/.cache/ms-playwright/chromium-"* ] 2>/dev/null; then
-            echo "Installing Playwright browsers..."
+          if [ ! -d "$HOME/.cache/ms-playwright" ]; then
             npx playwright install chromium
-          else
-            echo "Playwright browsers already installed"
           fi
+        REMOTE_SCRIPT
 
-          # Ensure app is running
-          if ! curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8012 | grep -q "200"; then
-            echo "Starting application..."
-            pkill -f "uvicorn src.app:app" || true
+    - name: Run E2E Tests on remote server
+      env:
+        SSH_TEST_SERVER: ${{ secrets.SSH_TEST_SERVER }}
+        SSH_TEST_USER: ${{ secrets.SSH_TEST_USER }}
+      run: |
+        ssh -o StrictHostKeyChecking=yes "$SSH_TEST_USER@$SSH_TEST_SERVER" "
+          cd ~/minimal-demo && 
+          if ! curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8012 | grep -q '200'; then
+            pkill -f 'uvicorn src.app:app' || true
             sleep 2
             nohup .venv/bin/uvicorn src.app:app --host 127.0.0.1 --port 8012 > app.log 2>&1 &
             sleep 3
-          fi
+          fi && 
+          TEST_URL=http://$SSH_TEST_SERVER:8012 npm test
+        "
 
-          echo "Checking application status..."
-          curl -s http://127.0.0.1:8012 | head -5
-
-          # Run E2E tests
-          echo "Running Playwright E2E tests..."
-          TEST_URL=http://${SSH_HOST}:8012 npm test
-
-          echo "Tests completed!"
-        EOF
-
-    - name: Fetch test results from remote server
+    - name: Fetch and upload test results
       if: always()
       env:
-        SSH_USER: ${{ secrets.SSH_TEST_USER }}
-        SSH_HOST: ${{ secrets.SSH_TEST_SERVER }}
+        SSH_TEST_SERVER: ${{ secrets.SSH_TEST_SERVER }}
+        SSH_TEST_USER: ${{ secrets.SSH_TEST_USER }}
       run: |
         mkdir -p report test-results
-        scp -i ~/.ssh/id_ed25519 -r ${SSH_USER}@${SSH_HOST}:~/minimal-demo/report/* report/ 2>/dev/null || true
-        scp -i ~/.ssh/id_ed25519 -r ${SSH_USER}@${SSH_HOST}:~/minimal-demo/test-results/* test-results/ 2>/dev/null || true
+        scp -r "$SSH_TEST_USER@$SSH_TEST_SERVER:~/minimal-demo/report/"* report/ 2>/dev/null || true
+        scp -r "$SSH_TEST_USER@$SSH_TEST_SERVER:~/minimal-demo/test-results/"* test-results/ 2>/dev/null || true
 
-    - name: Upload test results
+    - name: Upload artifacts
       if: always()
       uses: actions/upload-artifact@v4
       with:
