@@ -23,15 +23,14 @@ jobs:
     - name: Add server to known hosts
       run: |
         mkdir -p ~/.ssh
-        ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+        ssh-keyscan -H ${{ secrets.SSH_TEST_SERVER }} >> ~/.ssh/known_hosts
 
     - name: Run E2E Tests on Remote Server
       env:
-        SSH_USER: ${{ secrets.SSH_USER }}
-        SSH_HOST: ${{ secrets.SSH_HOST }}
-        TEST_URL: ${{ secrets.TEST_URL }}
+        SSH_USER: ${{ secrets.SSH_TEST_USER }}
+        SSH_HOST: ${{ secrets.SSH_TEST_SERVER }}
       run: |
-        echo "Connecting to remote server and running tests..."
+        echo "Connecting to remote server ${SSH_HOST} as ${SSH_USER}..."
         ssh ${SSH_USER}@${SSH_HOST} << 'EOF'
           set -e
 
@@ -41,7 +40,7 @@ jobs:
           # Pull latest changes
           git pull origin
 
-          # Ensure app is running (adjust as needed)
+          # Ensure app is running
           if ! curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8012 | grep -q "200"; then
             echo "Starting application..."
             # Kill any existing uvicorn process
@@ -63,7 +62,7 @@ jobs:
           fi
 
           # Install Playwright browsers if needed
-          if [ ! -d "~/.cache/ms-playwright" ]; then
+          if [ ! -d "$HOME/.cache/ms-playwright" ]; then
             echo "Installing Playwright browsers..."
             npx playwright install chromium
           fi
@@ -72,7 +71,7 @@ jobs:
           echo "Running Playwright E2E tests..."
           TEST_URL=http://89.167.64.170:8012 npm test
 
-          echo "Tests completed successfully!"
+          echo "Tests completed!"
         EOF
 
     - name: Upload test results
