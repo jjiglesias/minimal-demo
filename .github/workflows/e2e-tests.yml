@@ -1,0 +1,86 @@
+name: E2E Playwright Tests
+
+on:
+  push:
+    branches: [ main, master, fixes ]
+  pull_request:
+    branches: [ main, master, fixes ]
+
+jobs:
+  e2e-tests:
+    name: Run Playwright E2E Tests on Remote Server
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup SSH
+      uses: webfactory/ssh-agent@v0.8.0
+      with:
+        ssh-private-key: ${{ secrets.SSH_PRIVATE_KEY }}
+
+    - name: Add server to known hosts
+      run: |
+        mkdir -p ~/.ssh
+        ssh-keyscan -H ${{ secrets.SSH_HOST }} >> ~/.ssh/known_hosts
+
+    - name: Run E2E Tests on Remote Server
+      env:
+        SSH_USER: ${{ secrets.SSH_USER }}
+        SSH_HOST: ${{ secrets.SSH_HOST }}
+        TEST_URL: ${{ secrets.TEST_URL }}
+      run: |
+        echo "Connecting to remote server and running tests..."
+        ssh ${SSH_USER}@${SSH_HOST} << 'EOF'
+          set -e
+
+          # Navigate to project directory
+          cd ~/minimal-demo || exit 1
+
+          # Pull latest changes
+          git pull origin
+
+          # Ensure app is running (adjust as needed)
+          if ! curl -s -o /dev/null -w "%{http_code}" http://127.0.0.1:8012 | grep -q "200"; then
+            echo "Starting application..."
+            # Kill any existing uvicorn process
+            pkill -f "uvicorn src.app:app" || true
+            sleep 2
+            # Start app in background
+            nohup .venv/bin/uvicorn src.app:app --host 127.0.0.1 --port 8012 > app.log 2>&1 &
+            sleep 3
+          fi
+
+          # Check if app is accessible
+          echo "Checking application status..."
+          curl -s http://127.0.0.1:8012 | head -20
+
+          # Install Node.js dependencies if needed
+          if [ ! -d "node_modules" ]; then
+            echo "Installing Node.js dependencies..."
+            npm ci
+          fi
+
+          # Install Playwright browsers if needed
+          if [ ! -d "~/.cache/ms-playwright" ]; then
+            echo "Installing Playwright browsers..."
+            npx playwright install chromium
+          fi
+
+          # Run E2E tests
+          echo "Running Playwright E2E tests..."
+          TEST_URL=http://89.167.64.170:8012 npm test
+
+          echo "Tests completed successfully!"
+        EOF
+
+    - name: Upload test results
+      if: always()
+      uses: actions/upload-artifact@v4
+      with:
+        name: playwright-report
+        path: |
+          report/
+          test-results/
+        retention-days: 30

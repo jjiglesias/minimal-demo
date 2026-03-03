@@ -1,0 +1,31 @@
+{
+  "name": "minimal-demo",
+  "version": "1.0.0",
+  "description": "Create a virtual environment and install dependencies:",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "report": "playwright show-report report/playwright-report"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jjiglesias/minimal-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/jjiglesias/minimal-demo/issues"
+  },
+  "homepage": "https://github.com/jjiglesias/minimal-demo#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2"
+  }
+}
