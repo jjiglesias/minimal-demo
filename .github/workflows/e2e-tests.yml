@@ -32,7 +32,7 @@ jobs:
 
     - name: Run E2E tests against remote server
       env:
-        TEST_URL: https://student12.genaicrew.com:8012
+        TEST_URL: https://student12.genaicrew.com
       run: |
         echo "Running tests against $TEST_URL"
         npx playwright test --reporter=list,html
