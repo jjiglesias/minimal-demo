@@ -1,0 +1,2136 @@
+{
+  "config": {
+    "configFile": "/home/josejuan/minimal-demo/playwright.config.js",
+    "rootDir": "/home/josejuan/minimal-demo/tests/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 1
+    },
+    "preserveOutput": "always",
+    "projects": [
+      {
+        "outputDir": "/home/josejuan/minimal-demo/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 1
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "/home/josejuan/minimal-demo/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "quiet": false,
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "report/playwright-report",
+          "open": "never"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "report/test-results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "runAgents": "none",
+    "shard": null,
+    "tags": [],
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.58.2",
+    "workers": 1,
+    "webServer": null
+  },
+  "suites": [
+    {
+      "title": "activities.spec.js",
+      "file": "activities.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Activities List",
+          "file": "activities.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should load and display all activities",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 472,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:42.246Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a2ad297cec5e4293350c-a070d35a7f8b94bd5999",
+              "file": "activities.spec.js",
+              "line": 11,
+              "column": 3
+            },
+            {
+              "title": "should display activity names in cards",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 462,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:42.824Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a2ad297cec5e4293350c-2f382259d138008b3ea3",
+              "file": "activities.spec.js",
+              "line": 18,
+              "column": 3
+            },
+            {
+              "title": "should display activity descriptions",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 563,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:43.300Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a2ad297cec5e4293350c-d47313a299c7ba16b2a7",
+              "file": "activities.spec.js",
+              "line": 37,
+              "column": 3
+            },
+            {
+              "title": "should display activity schedules",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5650,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.activity-card').first().locator('p:has-text(\"Schedule:\")')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.activity-card').first().locator('p:has-text(\"Schedule:\")')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.activity-card').first().locator('p:has-text(\"Schedule:\")')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.activity-card').first().locator('p:has-text(\"Schedule:\")')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/josejuan/minimal-demo/tests/e2e/activities.spec.js:46:32",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/activities.spec.js",
+                          "column": 32,
+                          "line": 46
+                        },
+                        "snippet": "  44 |     const firstActivity = page.locator('.activity-card').first();\n  45 |     const scheduleText = firstActivity.locator('p:has-text(\"Schedule:\")');\n> 46 |     await expect(scheduleText).toBeVisible();\n     |                                ^\n  47 |   });\n  48 |\n  49 |   test('should display availability information', async ({ page }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/activities.spec.js",
+                            "column": 32,
+                            "line": 46
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.activity-card').first().locator('p:has-text(\"Schedule:\")')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.activity-card').first().locator('p:has-text(\"Schedule:\")')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  44 |     const firstActivity = page.locator('.activity-card').first();\n  45 |     const scheduleText = firstActivity.locator('p:has-text(\"Schedule:\")');\n> 46 |     await expect(scheduleText).toBeVisible();\n     |                                ^\n  47 |   });\n  48 |\n  49 |   test('should display availability information', async ({ page }) => {\n    at /home/josejuan/minimal-demo/tests/e2e/activities.spec.js:46:32"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:43.875Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/josejuan/minimal-demo/test-results/activities-Activities-List-should-display-activity-schedules-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/josejuan/minimal-demo/test-results/activities-Activities-List-should-display-activity-schedules-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/josejuan/minimal-demo/test-results/activities-Activities-List-should-display-activity-schedules-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/activities.spec.js",
+                        "column": 32,
+                        "line": 46
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a2ad297cec5e4293350c-ab0cbca5f31dccf2a2cd",
+              "file": "activities.spec.js",
+              "line": 43,
+              "column": 3
+            },
+            {
+              "title": "should display availability information",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5674,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.activity-card').first().locator('p:has-text(\"Availability:\")')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.activity-card').first().locator('p:has-text(\"Availability:\")')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.activity-card').first().locator('p:has-text(\"Availability:\")')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.activity-card').first().locator('p:has-text(\"Availability:\")')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/josejuan/minimal-demo/tests/e2e/activities.spec.js:52:36",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/activities.spec.js",
+                          "column": 36,
+                          "line": 52
+                        },
+                        "snippet": "  50 |     const firstActivity = page.locator('.activity-card').first();\n  51 |     const availabilityText = firstActivity.locator('p:has-text(\"Availability:\")');\n> 52 |     await expect(availabilityText).toBeVisible();\n     |                                    ^\n  53 |   });\n  54 |\n  55 |   test('should display participants count for each activity', async ({ page }) => {"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/activities.spec.js",
+                            "column": 36,
+                            "line": 52
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeVisible\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('.activity-card').first().locator('p:has-text(\"Availability:\")')\nExpected: visible\nReceived: hidden\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeVisible\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('.activity-card').first().locator('p:has-text(\"Availability:\")')\u001b[22m\n\u001b[2m    9 × locator resolved to <p>…</p>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  50 |     const firstActivity = page.locator('.activity-card').first();\n  51 |     const availabilityText = firstActivity.locator('p:has-text(\"Availability:\")');\n> 52 |     await expect(availabilityText).toBeVisible();\n     |                                    ^\n  53 |   });\n  54 |\n  55 |   test('should display participants count for each activity', async ({ page }) => {\n    at /home/josejuan/minimal-demo/tests/e2e/activities.spec.js:52:36"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:50.633Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/josejuan/minimal-demo/test-results/activities-Activities-List-8ba8a-ay-availability-information-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/josejuan/minimal-demo/test-results/activities-Activities-List-8ba8a-ay-availability-information-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/josejuan/minimal-demo/test-results/activities-Activities-List-8ba8a-ay-availability-information-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/activities.spec.js",
+                        "column": 36,
+                        "line": 52
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "a2ad297cec5e4293350c-a49cdfcd237d8965f414",
+              "file": "activities.spec.js",
+              "line": 49,
+              "column": 3
+            },
+            {
+              "title": "should display participants count for each activity",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 560,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:57.363Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a2ad297cec5e4293350c-c9caefc6a7bde7212660",
+              "file": "activities.spec.js",
+              "line": 55,
+              "column": 3
+            },
+            {
+              "title": "should populate activity dropdown with all activities",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 430,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:58.038Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a2ad297cec5e4293350c-a65904c12b2a59af45ac",
+              "file": "activities.spec.js",
+              "line": 66,
+              "column": 3
+            },
+            {
+              "title": "should show \"No participants yet\" for empty activities",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 508,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:58.486Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "a2ad297cec5e4293350c-d4c617a2d7bf54060bbf",
+              "file": "activities.spec.js",
+              "line": 81,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "api.spec.js",
+      "file": "api.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "API Endpoints",
+          "file": "api.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "GET /activities should return all activities",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 19,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:59.012Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-bb665c75bc9cace3fc1b",
+              "file": "api.spec.js",
+              "line": 5,
+              "column": 3
+            },
+            {
+              "title": "POST /activities/{name}/signup should register a student",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 47,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:59.038Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-cee255579d9c0ae6ba21",
+              "file": "api.spec.js",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "POST /activities/{name}/signup should reject duplicate signup",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 100,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:59.095Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-47a7d920dffc919fa3b0",
+              "file": "api.spec.js",
+              "line": 37,
+              "column": 3
+            },
+            {
+              "title": "POST /activities/{name}/signup should return 404 for non-existent activity",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 17,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:59.215Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-ab2cc4b2b20b4a5f09cc",
+              "file": "api.spec.js",
+              "line": 54,
+              "column": 3
+            },
+            {
+              "title": "DELETE /activities/{name}/participants should remove a participant",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 111,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:59.256Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-5c62f3983898e661de14",
+              "file": "api.spec.js",
+              "line": 66,
+              "column": 3
+            },
+            {
+              "title": "DELETE /activities/{name}/participants should return 404 for non-existent participant",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:59.406Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-257eb010ca8b0af1a21b",
+              "file": "api.spec.js",
+              "line": 84,
+              "column": 3
+            },
+            {
+              "title": "DELETE /activities/{name}/participants should return 404 for non-existent activity",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 48,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:59.422Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-b995bb86b547bc858d6f",
+              "file": "api.spec.js",
+              "line": 96,
+              "column": 3
+            },
+            {
+              "title": "Root path should redirect to static index.html",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 9,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:59.480Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-5efe47f9aed965f33041",
+              "file": "api.spec.js",
+              "line": 108,
+              "column": 3
+            },
+            {
+              "title": "Static files should be served",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 52,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"CSS\"\u001b[39m\nReceived string:    \u001b[31m\"* {\u001b[39m\n\u001b[31m  box-sizing: border-box;\u001b[39m\n\u001b[31m  margin: 0;\u001b[39m\n\u001b[31m  padding: 0;\u001b[39m\n\u001b[31m  font-family: Arial, sans-serif;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mbody {\u001b[39m\n\u001b[31m  font-family: Arial, sans-serif;\u001b[39m\n\u001b[31m  line-height: 1.6;\u001b[39m\n\u001b[31m  color: #333;\u001b[39m\n\u001b[31m  max-width: 1200px;\u001b[39m\n\u001b[31m  margin: 0 auto;\u001b[39m\n\u001b[31m  padding: 20px;\u001b[39m\n\u001b[31m  background-color: #f5f5f5;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mheader {\u001b[39m\n\u001b[31m  text-align: center;\u001b[39m\n\u001b[31m  padding: 20px 0;\u001b[39m\n\u001b[31m  margin-bottom: 30px;\u001b[39m\n\u001b[31m  background-color: #1a237e;\u001b[39m\n\u001b[31m  color: white;\u001b[39m\n\u001b[31m  border-radius: 5px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mheader h1 {\u001b[39m\n\u001b[31m  margin-bottom: 10px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mmain {\u001b[39m\n\u001b[31m  display: flex;\u001b[39m\n\u001b[31m  flex-wrap: wrap;\u001b[39m\n\u001b[31m  gap: 30px;\u001b[39m\n\u001b[31m  justify-content: center;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m@media (min-width: 768px) {\u001b[39m\n\u001b[31m  main {\u001b[39m\n\u001b[31m    grid-template-columns: 2fr 1fr;\u001b[39m\n\u001b[31m  }\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31msection {\u001b[39m\n\u001b[31m  background-color: white;\u001b[39m\n\u001b[31m  padding: 20px;\u001b[39m\n\u001b[31m  border-radius: 5px;\u001b[39m\n\u001b[31m  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\u001b[39m\n\u001b[31m  width: 100%;\u001b[39m\n\u001b[31m  max-width: 500px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31msection h3 {\u001b[39m\n\u001b[31m  margin-bottom: 20px;\u001b[39m\n\u001b[31m  padding-bottom: 10px;\u001b[39m\n\u001b[31m  border-bottom: 1px solid #ddd;\u001b[39m\n\u001b[31m  color: #1a237e;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.activity-card {\u001b[39m\n\u001b[31m  margin-bottom: 15px;\u001b[39m\n\u001b[31m  padding: 15px;\u001b[39m\n\u001b[31m  border: 1px solid #ddd;\u001b[39m\n\u001b[31m  border-radius: 5px;\u001b[39m\n\u001b[31m  background-color: #f9f9f9;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.activity-card h4 {\u001b[39m\n\u001b[31m  margin-bottom: 10px;\u001b[39m\n\u001b[31m  color: #0066cc;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.activity-card p {\u001b[39m\n\u001b[31m  margin-bottom: 8px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participants-section {\u001b[39m\n\u001b[31m  margin-top: 15px;\u001b[39m\n\u001b[31m  padding-top: 15px;\u001b[39m\n\u001b[31m  border-top: 2px solid #e0e0e0;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participants-section h5 {\u001b[39m\n\u001b[31m  margin-bottom: 10px;\u001b[39m\n\u001b[31m  color: #1a237e;\u001b[39m\n\u001b[31m  font-size: 14px;\u001b[39m\n\u001b[31m  text-transform: uppercase;\u001b[39m\n\u001b[31m  letter-spacing: 0.5px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participants-list {\u001b[39m\n\u001b[31m  display: flex;\u001b[39m\n\u001b[31m  flex-wrap: wrap;\u001b[39m\n\u001b[31m  gap: 8px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participant-badge {\u001b[39m\n\u001b[31m  display: inline-flex;\u001b[39m\n\u001b[31m  align-items: center;\u001b[39m\n\u001b[31m  gap: 8px;\u001b[39m\n\u001b[31m  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\u001b[39m\n\u001b[31m  color: white;\u001b[39m\n\u001b[31m  padding: 6px 12px;\u001b[39m\n\u001b[31m  border-radius: 20px;\u001b[39m\n\u001b[31m  font-size: 12px;\u001b[39m\n\u001b[31m  font-weight: 500;\u001b[39m\n\u001b[31m  word-break: break-word;\u001b[39m\n\u001b[31m  max-width: 100%;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.delete-btn {\u001b[39m\n\u001b[31m  background: rgba(198,40,40,0.95);\u001b[39m\n\u001b[31m  color: white;\u001b[39m\n\u001b[31m  border: none;\u001b[39m\n\u001b[31m  width: 20px;\u001b[39m\n\u001b[31m  height: 20px;\u001b[39m\n\u001b[31m  border-radius: 50%;\u001b[39m\n\u001b[31m  font-size: 12px;\u001b[39m\n\u001b[31m  line-height: 1;\u001b[39m\n\u001b[31m  cursor: pointer;\u001b[39m\n\u001b[31m  display: inline-flex;\u001b[39m\n\u001b[31m  align-items: center;\u001b[39m\n\u001b[31m  justify-content: center;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.delete-btn:hover {\u001b[39m\n\u001b[31m  background: rgba(183,28,28,0.95);\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participants-section.empty {\u001b[39m\n\u001b[31m  text-align: center;\u001b[39m\n\u001b[31m  padding: 10px 0;\u001b[39m\n\u001b[31m  color: #999;\u001b[39m\n\u001b[31m  font-style: italic;\u001b[39m\n\u001b[31m  font-size: 14px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.form-group {\u001b[39m\n\u001b[31m  margin-bottom: 15px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.form-group label {\u001b[39m\n\u001b[31m  display: block;\u001b[39m\n\u001b[31m  margin-bottom: 5px;\u001b[39m\n\u001b[31m  font-weight: bold;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.form-group input,\u001b[39m\n\u001b[31m.form-group select {\u001b[39m\n\u001b[31m  width: 100%;\u001b[39m\n\u001b[31m  padding: 10px;\u001b[39m\n\u001b[31m  border: 1px solid #ddd;\u001b[39m\n\u001b[31m  border-radius: 4px;\u001b[39m\n\u001b[31m  font-size: 16px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mbutton {\u001b[39m\n\u001b[31m  background-color: #1a237e;\u001b[39m\n\u001b[31m  color: white;\u001b[39m\n\u001b[31m  border: none;\u001b[39m\n\u001b[31m  padding: 10px 15px;\u001b[39m\n\u001b[31m  font-size: 16px;\u001b[39m\n\u001b[31m  border-radius: 5px;\u001b[39m\n\u001b[31m  cursor: pointer;\u001b[39m\n\u001b[31m  transition: background-color 0.2s;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mbutton:hover {\u001b[39m\n\u001b[31m  background-color: #3949ab;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.message {\u001b[39m\n\u001b[31m  margin-top: 20px;\u001b[39m\n\u001b[31m  padding: 10px;\u001b[39m\n\u001b[31m  border-radius: 4px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.success {\u001b[39m\n\u001b[31m  background-color: #e8f5e9;\u001b[39m\n\u001b[31m  color: #2e7d32;\u001b[39m\n\u001b[31m  border: 1px solid #a5d6a7;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.error {\u001b[39m\n\u001b[31m  background-color: #ffebee;\u001b[39m\n\u001b[31m  color: #c62828;\u001b[39m\n\u001b[31m  border: 1px solid #ef9a9a;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.info {\u001b[39m\n\u001b[31m  background-color: #d1ecf1;\u001b[39m\n\u001b[31m  color: #0c5460;\u001b[39m\n\u001b[31m  border: 1px solid #bee5eb;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.hidden {\u001b[39m\n\u001b[31m  display: none;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mfooter {\u001b[39m\n\u001b[31m  text-align: center;\u001b[39m\n\u001b[31m  margin-top: 30px;\u001b[39m\n\u001b[31m  padding: 20px;\u001b[39m\n\u001b[31m  color: #666;\u001b[39m\n\u001b[31m}\u001b[39m\n\u001b[31m\"\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"CSS\"\u001b[39m\nReceived string:    \u001b[31m\"* {\u001b[39m\n\u001b[31m  box-sizing: border-box;\u001b[39m\n\u001b[31m  margin: 0;\u001b[39m\n\u001b[31m  padding: 0;\u001b[39m\n\u001b[31m  font-family: Arial, sans-serif;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mbody {\u001b[39m\n\u001b[31m  font-family: Arial, sans-serif;\u001b[39m\n\u001b[31m  line-height: 1.6;\u001b[39m\n\u001b[31m  color: #333;\u001b[39m\n\u001b[31m  max-width: 1200px;\u001b[39m\n\u001b[31m  margin: 0 auto;\u001b[39m\n\u001b[31m  padding: 20px;\u001b[39m\n\u001b[31m  background-color: #f5f5f5;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mheader {\u001b[39m\n\u001b[31m  text-align: center;\u001b[39m\n\u001b[31m  padding: 20px 0;\u001b[39m\n\u001b[31m  margin-bottom: 30px;\u001b[39m\n\u001b[31m  background-color: #1a237e;\u001b[39m\n\u001b[31m  color: white;\u001b[39m\n\u001b[31m  border-radius: 5px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mheader h1 {\u001b[39m\n\u001b[31m  margin-bottom: 10px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mmain {\u001b[39m\n\u001b[31m  display: flex;\u001b[39m\n\u001b[31m  flex-wrap: wrap;\u001b[39m\n\u001b[31m  gap: 30px;\u001b[39m\n\u001b[31m  justify-content: center;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m@media (min-width: 768px) {\u001b[39m\n\u001b[31m  main {\u001b[39m\n\u001b[31m    grid-template-columns: 2fr 1fr;\u001b[39m\n\u001b[31m  }\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31msection {\u001b[39m\n\u001b[31m  background-color: white;\u001b[39m\n\u001b[31m  padding: 20px;\u001b[39m\n\u001b[31m  border-radius: 5px;\u001b[39m\n\u001b[31m  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\u001b[39m\n\u001b[31m  width: 100%;\u001b[39m\n\u001b[31m  max-width: 500px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31msection h3 {\u001b[39m\n\u001b[31m  margin-bottom: 20px;\u001b[39m\n\u001b[31m  padding-bottom: 10px;\u001b[39m\n\u001b[31m  border-bottom: 1px solid #ddd;\u001b[39m\n\u001b[31m  color: #1a237e;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.activity-card {\u001b[39m\n\u001b[31m  margin-bottom: 15px;\u001b[39m\n\u001b[31m  padding: 15px;\u001b[39m\n\u001b[31m  border: 1px solid #ddd;\u001b[39m\n\u001b[31m  border-radius: 5px;\u001b[39m\n\u001b[31m  background-color: #f9f9f9;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.activity-card h4 {\u001b[39m\n\u001b[31m  margin-bottom: 10px;\u001b[39m\n\u001b[31m  color: #0066cc;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.activity-card p {\u001b[39m\n\u001b[31m  margin-bottom: 8px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participants-section {\u001b[39m\n\u001b[31m  margin-top: 15px;\u001b[39m\n\u001b[31m  padding-top: 15px;\u001b[39m\n\u001b[31m  border-top: 2px solid #e0e0e0;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participants-section h5 {\u001b[39m\n\u001b[31m  margin-bottom: 10px;\u001b[39m\n\u001b[31m  color: #1a237e;\u001b[39m\n\u001b[31m  font-size: 14px;\u001b[39m\n\u001b[31m  text-transform: uppercase;\u001b[39m\n\u001b[31m  letter-spacing: 0.5px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participants-list {\u001b[39m\n\u001b[31m  display: flex;\u001b[39m\n\u001b[31m  flex-wrap: wrap;\u001b[39m\n\u001b[31m  gap: 8px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participant-badge {\u001b[39m\n\u001b[31m  display: inline-flex;\u001b[39m\n\u001b[31m  align-items: center;\u001b[39m\n\u001b[31m  gap: 8px;\u001b[39m\n\u001b[31m  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\u001b[39m\n\u001b[31m  color: white;\u001b[39m\n\u001b[31m  padding: 6px 12px;\u001b[39m\n\u001b[31m  border-radius: 20px;\u001b[39m\n\u001b[31m  font-size: 12px;\u001b[39m\n\u001b[31m  font-weight: 500;\u001b[39m\n\u001b[31m  word-break: break-word;\u001b[39m\n\u001b[31m  max-width: 100%;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.delete-btn {\u001b[39m\n\u001b[31m  background: rgba(198,40,40,0.95);\u001b[39m\n\u001b[31m  color: white;\u001b[39m\n\u001b[31m  border: none;\u001b[39m\n\u001b[31m  width: 20px;\u001b[39m\n\u001b[31m  height: 20px;\u001b[39m\n\u001b[31m  border-radius: 50%;\u001b[39m\n\u001b[31m  font-size: 12px;\u001b[39m\n\u001b[31m  line-height: 1;\u001b[39m\n\u001b[31m  cursor: pointer;\u001b[39m\n\u001b[31m  display: inline-flex;\u001b[39m\n\u001b[31m  align-items: center;\u001b[39m\n\u001b[31m  justify-content: center;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.delete-btn:hover {\u001b[39m\n\u001b[31m  background: rgba(183,28,28,0.95);\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participants-section.empty {\u001b[39m\n\u001b[31m  text-align: center;\u001b[39m\n\u001b[31m  padding: 10px 0;\u001b[39m\n\u001b[31m  color: #999;\u001b[39m\n\u001b[31m  font-style: italic;\u001b[39m\n\u001b[31m  font-size: 14px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.form-group {\u001b[39m\n\u001b[31m  margin-bottom: 15px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.form-group label {\u001b[39m\n\u001b[31m  display: block;\u001b[39m\n\u001b[31m  margin-bottom: 5px;\u001b[39m\n\u001b[31m  font-weight: bold;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.form-group input,\u001b[39m\n\u001b[31m.form-group select {\u001b[39m\n\u001b[31m  width: 100%;\u001b[39m\n\u001b[31m  padding: 10px;\u001b[39m\n\u001b[31m  border: 1px solid #ddd;\u001b[39m\n\u001b[31m  border-radius: 4px;\u001b[39m\n\u001b[31m  font-size: 16px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mbutton {\u001b[39m\n\u001b[31m  background-color: #1a237e;\u001b[39m\n\u001b[31m  color: white;\u001b[39m\n\u001b[31m  border: none;\u001b[39m\n\u001b[31m  padding: 10px 15px;\u001b[39m\n\u001b[31m  font-size: 16px;\u001b[39m\n\u001b[31m  border-radius: 5px;\u001b[39m\n\u001b[31m  cursor: pointer;\u001b[39m\n\u001b[31m  transition: background-color 0.2s;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mbutton:hover {\u001b[39m\n\u001b[31m  background-color: #3949ab;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.message {\u001b[39m\n\u001b[31m  margin-top: 20px;\u001b[39m\n\u001b[31m  padding: 10px;\u001b[39m\n\u001b[31m  border-radius: 4px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.success {\u001b[39m\n\u001b[31m  background-color: #e8f5e9;\u001b[39m\n\u001b[31m  color: #2e7d32;\u001b[39m\n\u001b[31m  border: 1px solid #a5d6a7;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.error {\u001b[39m\n\u001b[31m  background-color: #ffebee;\u001b[39m\n\u001b[31m  color: #c62828;\u001b[39m\n\u001b[31m  border: 1px solid #ef9a9a;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.info {\u001b[39m\n\u001b[31m  background-color: #d1ecf1;\u001b[39m\n\u001b[31m  color: #0c5460;\u001b[39m\n\u001b[31m  border: 1px solid #bee5eb;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.hidden {\u001b[39m\n\u001b[31m  display: none;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mfooter {\u001b[39m\n\u001b[31m  text-align: center;\u001b[39m\n\u001b[31m  margin-top: 30px;\u001b[39m\n\u001b[31m  padding: 20px;\u001b[39m\n\u001b[31m  color: #666;\u001b[39m\n\u001b[31m}\u001b[39m\n\u001b[31m\"\u001b[39m\n    at /home/josejuan/minimal-demo/tests/e2e/api.spec.js:123:18",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/api.spec.js",
+                          "column": 18,
+                          "line": 123
+                        },
+                        "snippet": "  121 |\n  122 |     const body = await response.text();\n> 123 |     expect(body).toContain('CSS');\n      |                  ^\n  124 |   });\n  125 |\n  126 | });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/api.spec.js",
+                            "column": 18,
+                            "line": 123
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoContain\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // indexOf\u001b[22m\n\nExpected substring: \u001b[32m\"CSS\"\u001b[39m\nReceived string:    \u001b[31m\"* {\u001b[39m\n\u001b[31m  box-sizing: border-box;\u001b[39m\n\u001b[31m  margin: 0;\u001b[39m\n\u001b[31m  padding: 0;\u001b[39m\n\u001b[31m  font-family: Arial, sans-serif;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mbody {\u001b[39m\n\u001b[31m  font-family: Arial, sans-serif;\u001b[39m\n\u001b[31m  line-height: 1.6;\u001b[39m\n\u001b[31m  color: #333;\u001b[39m\n\u001b[31m  max-width: 1200px;\u001b[39m\n\u001b[31m  margin: 0 auto;\u001b[39m\n\u001b[31m  padding: 20px;\u001b[39m\n\u001b[31m  background-color: #f5f5f5;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mheader {\u001b[39m\n\u001b[31m  text-align: center;\u001b[39m\n\u001b[31m  padding: 20px 0;\u001b[39m\n\u001b[31m  margin-bottom: 30px;\u001b[39m\n\u001b[31m  background-color: #1a237e;\u001b[39m\n\u001b[31m  color: white;\u001b[39m\n\u001b[31m  border-radius: 5px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mheader h1 {\u001b[39m\n\u001b[31m  margin-bottom: 10px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mmain {\u001b[39m\n\u001b[31m  display: flex;\u001b[39m\n\u001b[31m  flex-wrap: wrap;\u001b[39m\n\u001b[31m  gap: 30px;\u001b[39m\n\u001b[31m  justify-content: center;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m@media (min-width: 768px) {\u001b[39m\n\u001b[31m  main {\u001b[39m\n\u001b[31m    grid-template-columns: 2fr 1fr;\u001b[39m\n\u001b[31m  }\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31msection {\u001b[39m\n\u001b[31m  background-color: white;\u001b[39m\n\u001b[31m  padding: 20px;\u001b[39m\n\u001b[31m  border-radius: 5px;\u001b[39m\n\u001b[31m  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);\u001b[39m\n\u001b[31m  width: 100%;\u001b[39m\n\u001b[31m  max-width: 500px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31msection h3 {\u001b[39m\n\u001b[31m  margin-bottom: 20px;\u001b[39m\n\u001b[31m  padding-bottom: 10px;\u001b[39m\n\u001b[31m  border-bottom: 1px solid #ddd;\u001b[39m\n\u001b[31m  color: #1a237e;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.activity-card {\u001b[39m\n\u001b[31m  margin-bottom: 15px;\u001b[39m\n\u001b[31m  padding: 15px;\u001b[39m\n\u001b[31m  border: 1px solid #ddd;\u001b[39m\n\u001b[31m  border-radius: 5px;\u001b[39m\n\u001b[31m  background-color: #f9f9f9;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.activity-card h4 {\u001b[39m\n\u001b[31m  margin-bottom: 10px;\u001b[39m\n\u001b[31m  color: #0066cc;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.activity-card p {\u001b[39m\n\u001b[31m  margin-bottom: 8px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participants-section {\u001b[39m\n\u001b[31m  margin-top: 15px;\u001b[39m\n\u001b[31m  padding-top: 15px;\u001b[39m\n\u001b[31m  border-top: 2px solid #e0e0e0;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participants-section h5 {\u001b[39m\n\u001b[31m  margin-bottom: 10px;\u001b[39m\n\u001b[31m  color: #1a237e;\u001b[39m\n\u001b[31m  font-size: 14px;\u001b[39m\n\u001b[31m  text-transform: uppercase;\u001b[39m\n\u001b[31m  letter-spacing: 0.5px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participants-list {\u001b[39m\n\u001b[31m  display: flex;\u001b[39m\n\u001b[31m  flex-wrap: wrap;\u001b[39m\n\u001b[31m  gap: 8px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participant-badge {\u001b[39m\n\u001b[31m  display: inline-flex;\u001b[39m\n\u001b[31m  align-items: center;\u001b[39m\n\u001b[31m  gap: 8px;\u001b[39m\n\u001b[31m  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);\u001b[39m\n\u001b[31m  color: white;\u001b[39m\n\u001b[31m  padding: 6px 12px;\u001b[39m\n\u001b[31m  border-radius: 20px;\u001b[39m\n\u001b[31m  font-size: 12px;\u001b[39m\n\u001b[31m  font-weight: 500;\u001b[39m\n\u001b[31m  word-break: break-word;\u001b[39m\n\u001b[31m  max-width: 100%;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.delete-btn {\u001b[39m\n\u001b[31m  background: rgba(198,40,40,0.95);\u001b[39m\n\u001b[31m  color: white;\u001b[39m\n\u001b[31m  border: none;\u001b[39m\n\u001b[31m  width: 20px;\u001b[39m\n\u001b[31m  height: 20px;\u001b[39m\n\u001b[31m  border-radius: 50%;\u001b[39m\n\u001b[31m  font-size: 12px;\u001b[39m\n\u001b[31m  line-height: 1;\u001b[39m\n\u001b[31m  cursor: pointer;\u001b[39m\n\u001b[31m  display: inline-flex;\u001b[39m\n\u001b[31m  align-items: center;\u001b[39m\n\u001b[31m  justify-content: center;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.delete-btn:hover {\u001b[39m\n\u001b[31m  background: rgba(183,28,28,0.95);\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.participants-section.empty {\u001b[39m\n\u001b[31m  text-align: center;\u001b[39m\n\u001b[31m  padding: 10px 0;\u001b[39m\n\u001b[31m  color: #999;\u001b[39m\n\u001b[31m  font-style: italic;\u001b[39m\n\u001b[31m  font-size: 14px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.form-group {\u001b[39m\n\u001b[31m  margin-bottom: 15px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.form-group label {\u001b[39m\n\u001b[31m  display: block;\u001b[39m\n\u001b[31m  margin-bottom: 5px;\u001b[39m\n\u001b[31m  font-weight: bold;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.form-group input,\u001b[39m\n\u001b[31m.form-group select {\u001b[39m\n\u001b[31m  width: 100%;\u001b[39m\n\u001b[31m  padding: 10px;\u001b[39m\n\u001b[31m  border: 1px solid #ddd;\u001b[39m\n\u001b[31m  border-radius: 4px;\u001b[39m\n\u001b[31m  font-size: 16px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mbutton {\u001b[39m\n\u001b[31m  background-color: #1a237e;\u001b[39m\n\u001b[31m  color: white;\u001b[39m\n\u001b[31m  border: none;\u001b[39m\n\u001b[31m  padding: 10px 15px;\u001b[39m\n\u001b[31m  font-size: 16px;\u001b[39m\n\u001b[31m  border-radius: 5px;\u001b[39m\n\u001b[31m  cursor: pointer;\u001b[39m\n\u001b[31m  transition: background-color 0.2s;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mbutton:hover {\u001b[39m\n\u001b[31m  background-color: #3949ab;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.message {\u001b[39m\n\u001b[31m  margin-top: 20px;\u001b[39m\n\u001b[31m  padding: 10px;\u001b[39m\n\u001b[31m  border-radius: 4px;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.success {\u001b[39m\n\u001b[31m  background-color: #e8f5e9;\u001b[39m\n\u001b[31m  color: #2e7d32;\u001b[39m\n\u001b[31m  border: 1px solid #a5d6a7;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.error {\u001b[39m\n\u001b[31m  background-color: #ffebee;\u001b[39m\n\u001b[31m  color: #c62828;\u001b[39m\n\u001b[31m  border: 1px solid #ef9a9a;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.info {\u001b[39m\n\u001b[31m  background-color: #d1ecf1;\u001b[39m\n\u001b[31m  color: #0c5460;\u001b[39m\n\u001b[31m  border: 1px solid #bee5eb;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31m.hidden {\u001b[39m\n\u001b[31m  display: none;\u001b[39m\n\u001b[31m}·\u001b[39m\n\u001b[31mfooter {\u001b[39m\n\u001b[31m  text-align: center;\u001b[39m\n\u001b[31m  margin-top: 30px;\u001b[39m\n\u001b[31m  padding: 20px;\u001b[39m\n\u001b[31m  color: #666;\u001b[39m\n\u001b[31m}\u001b[39m\n\u001b[31m\"\u001b[39m\n\n  121 |\n  122 |     const body = await response.text();\n> 123 |     expect(body).toContain('CSS');\n      |                  ^\n  124 |   });\n  125 |\n  126 | });\n    at /home/josejuan/minimal-demo/tests/e2e/api.spec.js:123:18"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:10:59.501Z",
+                      "annotations": [],
+                      "attachments": [],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/api.spec.js",
+                        "column": 18,
+                        "line": 123
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "8747e39b871de0524be5-960720f399506b049b54",
+              "file": "api.spec.js",
+              "line": 117,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "homepage.spec.js",
+      "file": "homepage.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Homepage - Mergington High School Activities",
+          "file": "homepage.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should display the correct page title",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 525,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:00.620Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4ffee829137744e3cd-d2209b9382239e469309",
+              "file": "homepage.spec.js",
+              "line": 9,
+              "column": 3
+            },
+            {
+              "title": "should display the main heading",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 414,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:01.237Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4ffee829137744e3cd-54ad6bc50f7140866638",
+              "file": "homepage.spec.js",
+              "line": 13,
+              "column": 3
+            },
+            {
+              "title": "should display the subheading",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 417,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:01.665Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4ffee829137744e3cd-5602249b9bdda14166fb",
+              "file": "homepage.spec.js",
+              "line": 18,
+              "column": 3
+            },
+            {
+              "title": "should display the activities section",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 461,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:02.096Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4ffee829137744e3cd-8ed57ef88a620be4e95e",
+              "file": "homepage.spec.js",
+              "line": 23,
+              "column": 3
+            },
+            {
+              "title": "should display the signup section",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 499,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:02.571Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4ffee829137744e3cd-3a6a01c46fef03cbab28",
+              "file": "homepage.spec.js",
+              "line": 29,
+              "column": 3
+            },
+            {
+              "title": "should display the signup form with email input",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 475,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:03.081Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4ffee829137744e3cd-75edf70e9b5ddf5d09e8",
+              "file": "homepage.spec.js",
+              "line": 35,
+              "column": 3
+            },
+            {
+              "title": "should display the signup form with activity select",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 422,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:03.571Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4ffee829137744e3cd-592ad4586d3451391877",
+              "file": "homepage.spec.js",
+              "line": 42,
+              "column": 3
+            },
+            {
+              "title": "should display the submit button",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 397,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:04.009Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4ffee829137744e3cd-b9c04c7c1f91e3f4e84d",
+              "file": "homepage.spec.js",
+              "line": 48,
+              "column": 3
+            },
+            {
+              "title": "should display the footer",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 510,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:04.419Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "cf4ffee829137744e3cd-97d9f0aa5c07fbfa7f13",
+              "file": "homepage.spec.js",
+              "line": 54,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "participants.spec.js",
+      "file": "participants.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Participants Management",
+          "file": "participants.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should display participant badges for activities with participants",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 486,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:04.949Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22235f6c462af7d6602b-94d0b968be55316fc806",
+              "file": "participants.spec.js",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "should display delete button on each participant badge",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 423,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:05.451Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22235f6c462af7d6602b-633d0c92563178b1299e",
+              "file": "participants.spec.js",
+              "line": 21,
+              "column": 3
+            },
+            {
+              "title": "should successfully remove a participant from an activity",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5670,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/josejuan/minimal-demo/tests/e2e/participants.spec.js:43:30",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/participants.spec.js",
+                          "column": 30,
+                          "line": 43
+                        },
+                        "snippet": "  41 |     // Wait for success\n  42 |     const messageDiv = page.locator('#message');\n> 43 |     await expect(messageDiv).toHaveClass('success');\n     |                              ^\n  44 |     await page.waitForTimeout(1000);\n  45 |\n  46 |     // Find the participant badge and delete button"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/participants.spec.js",
+                            "column": 30,
+                            "line": 43
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  41 |     // Wait for success\n  42 |     const messageDiv = page.locator('#message');\n> 43 |     await expect(messageDiv).toHaveClass('success');\n     |                              ^\n  44 |     await page.waitForTimeout(1000);\n  45 |\n  46 |     // Find the participant badge and delete button\n    at /home/josejuan/minimal-demo/tests/e2e/participants.spec.js:43:30"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:05.884Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/josejuan/minimal-demo/test-results/participants-Participants--a1621-articipant-from-an-activity-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/josejuan/minimal-demo/test-results/participants-Participants--a1621-articipant-from-an-activity-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/josejuan/minimal-demo/test-results/participants-Participants--a1621-articipant-from-an-activity-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/participants.spec.js",
+                        "column": 30,
+                        "line": 43
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22235f6c462af7d6602b-292b9759a68e3518b387",
+              "file": "participants.spec.js",
+              "line": 31,
+              "column": 3
+            },
+            {
+              "title": "should refresh activities list after removing participant",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5656,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/josejuan/minimal-demo/tests/e2e/participants.spec.js:75:30",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/participants.spec.js",
+                          "column": 30,
+                          "line": 75
+                        },
+                        "snippet": "  73 |\n  74 |     const messageDiv = page.locator('#message');\n> 75 |     await expect(messageDiv).toHaveClass('success');\n     |                              ^\n  76 |     await page.waitForTimeout(1000);\n  77 |\n  78 |     // Find and remove"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/participants.spec.js",
+                            "column": 30,
+                            "line": 75
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  73 |\n  74 |     const messageDiv = page.locator('#message');\n> 75 |     await expect(messageDiv).toHaveClass('success');\n     |                              ^\n  76 |     await page.waitForTimeout(1000);\n  77 |\n  78 |     // Find and remove\n    at /home/josejuan/minimal-demo/tests/e2e/participants.spec.js:75:30"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:12.571Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/josejuan/minimal-demo/test-results/participants-Participants--40315--after-removing-participant-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/josejuan/minimal-demo/test-results/participants-Participants--40315--after-removing-participant-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/josejuan/minimal-demo/test-results/participants-Participants--40315--after-removing-participant-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/participants.spec.js",
+                        "column": 30,
+                        "line": 75
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22235f6c462af7d6602b-42b6e54405e3f99451f4",
+              "file": "participants.spec.js",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "should update spots left count when participant is added",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5742,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/josejuan/minimal-demo/tests/e2e/participants.spec.js:115:30",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/participants.spec.js",
+                          "column": 30,
+                          "line": 115
+                        },
+                        "snippet": "  113 |     // Wait for refresh\n  114 |     const messageDiv = page.locator('#message');\n> 115 |     await expect(messageDiv).toHaveClass('success');\n      |                              ^\n  116 |     await page.waitForTimeout(1000);\n  117 |\n  118 |     // Check spots decreased"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/participants.spec.js",
+                            "column": 30,
+                            "line": 115
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  113 |     // Wait for refresh\n  114 |     const messageDiv = page.locator('#message');\n> 115 |     await expect(messageDiv).toHaveClass('success');\n      |                              ^\n  116 |     await page.waitForTimeout(1000);\n  117 |\n  118 |     // Check spots decreased\n    at /home/josejuan/minimal-demo/tests/e2e/participants.spec.js:115:30"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:19.386Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/josejuan/minimal-demo/test-results/participants-Participants--62146-t-when-participant-is-added-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/josejuan/minimal-demo/test-results/participants-Participants--62146-t-when-participant-is-added-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/josejuan/minimal-demo/test-results/participants-Participants--62146-t-when-participant-is-added-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/participants.spec.js",
+                        "column": 30,
+                        "line": 115
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22235f6c462af7d6602b-a539df131dc0cc9ce044",
+              "file": "participants.spec.js",
+              "line": 96,
+              "column": 3
+            },
+            {
+              "title": "should update spots left count when participant is removed",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5626,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/josejuan/minimal-demo/tests/e2e/participants.spec.js:135:30",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/participants.spec.js",
+                          "column": 30,
+                          "line": 135
+                        },
+                        "snippet": "  133 |\n  134 |     const messageDiv = page.locator('#message');\n> 135 |     await expect(messageDiv).toHaveClass('success');\n      |                              ^\n  136 |     await page.waitForTimeout(1000);\n  137 |\n  138 |     // Get spots after adding"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/participants.spec.js",
+                            "column": 30,
+                            "line": 135
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  133 |\n  134 |     const messageDiv = page.locator('#message');\n> 135 |     await expect(messageDiv).toHaveClass('success');\n      |                              ^\n  136 |     await page.waitForTimeout(1000);\n  137 |\n  138 |     // Get spots after adding\n    at /home/josejuan/minimal-demo/tests/e2e/participants.spec.js:135:30"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:26.316Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/josejuan/minimal-demo/test-results/participants-Participants--fe4cb-when-participant-is-removed-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/josejuan/minimal-demo/test-results/participants-Participants--fe4cb-when-participant-is-removed-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/josejuan/minimal-demo/test-results/participants-Participants--fe4cb-when-participant-is-removed-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/participants.spec.js",
+                        "column": 30,
+                        "line": 135
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "22235f6c462af7d6602b-546b1e16f5fb40aee455",
+              "file": "participants.spec.js",
+              "line": 125,
+              "column": 3
+            },
+            {
+              "title": "should display participants section with count",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 523,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:33.072Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "22235f6c462af7d6602b-913d6a19c01ab8f28507",
+              "file": "participants.spec.js",
+              "line": 162,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "signup.spec.js",
+      "file": "signup.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Activity Signup",
+          "file": "signup.spec.js",
+          "line": 3,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should successfully sign up a new student for an activity",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5647,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: not \u001b[32m\"hidden\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mhidden\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: not \u001b[32m\"hidden\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mhidden\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:25:34",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                          "column": 34,
+                          "line": 25
+                        },
+                        "snippet": "  23 |     // Wait for success message\n  24 |     const messageDiv = page.locator('#message');\n> 25 |     await expect(messageDiv).not.toHaveClass('hidden');\n     |                                  ^\n  26 |     await expect(messageDiv).toHaveClass('success');\n  27 |     await expect(messageDiv).toContainText(`Signed up ${testEmail} for ${activityName}`);\n  28 |   });"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                            "column": 34,
+                            "line": 25
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: not \u001b[32m\"hidden\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mhidden\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  23 |     // Wait for success message\n  24 |     const messageDiv = page.locator('#message');\n> 25 |     await expect(messageDiv).not.toHaveClass('hidden');\n     |                                  ^\n  26 |     await expect(messageDiv).toHaveClass('success');\n  27 |     await expect(messageDiv).toContainText(`Signed up ${testEmail} for ${activityName}`);\n  28 |   });\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:25:34"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:33.707Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-ba899-new-student-for-an-activity-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-ba899-new-student-for-an-activity-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-ba899-new-student-for-an-activity-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                        "column": 34,
+                        "line": 25
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "66d8a20249bb48b38a0e-9b1d14a82fbfee4e89fb",
+              "file": "signup.spec.js",
+              "line": 10,
+              "column": 3
+            },
+            {
+              "title": "should prevent duplicate signup for the same activity",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5567,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:41:30",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                          "column": 30,
+                          "line": 41
+                        },
+                        "snippet": "  39 |     // Wait for first success\n  40 |     const messageDiv = page.locator('#message');\n> 41 |     await expect(messageDiv).toHaveClass('success');\n     |                              ^\n  42 |\n  43 |     // Wait for form to be ready again\n  44 |     await page.waitForTimeout(1000);"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                            "column": 30,
+                            "line": 41
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  39 |     // Wait for first success\n  40 |     const messageDiv = page.locator('#message');\n> 41 |     await expect(messageDiv).toHaveClass('success');\n     |                              ^\n  42 |\n  43 |     // Wait for form to be ready again\n  44 |     await page.waitForTimeout(1000);\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:41:30"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:40.373Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-6af94-ignup-for-the-same-activity-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-6af94-ignup-for-the-same-activity-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-6af94-ignup-for-the-same-activity-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                        "column": 30,
+                        "line": 41
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "66d8a20249bb48b38a0e-926b9dfdd55132ba46c5",
+              "file": "signup.spec.js",
+              "line": 30,
+              "column": 3
+            },
+            {
+              "title": "should validate email field is required",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 568,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:47.073Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "66d8a20249bb48b38a0e-3c664db92d971946fcfd",
+              "file": "signup.spec.js",
+              "line": 56,
+              "column": 3
+            },
+            {
+              "title": "should validate activity selection is required",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 432,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:47.742Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "66d8a20249bb48b38a0e-622f573c803824c97dd9",
+              "file": "signup.spec.js",
+              "line": 61,
+              "column": 3
+            },
+            {
+              "title": "should clear form after successful signup",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5639,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:76:30",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                          "column": 30,
+                          "line": 76
+                        },
+                        "snippet": "  74 |     // Wait for success\n  75 |     const messageDiv = page.locator('#message');\n> 76 |     await expect(messageDiv).toHaveClass('success');\n     |                              ^\n  77 |\n  78 |     // Check form is cleared\n  79 |     const emailValue = await page.inputValue('#email');"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                            "column": 30,
+                            "line": 76
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  74 |     // Wait for success\n  75 |     const messageDiv = page.locator('#message');\n> 76 |     await expect(messageDiv).toHaveClass('success');\n     |                              ^\n  77 |\n  78 |     // Check form is cleared\n  79 |     const emailValue = await page.inputValue('#email');\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:76:30"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:48.189Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-18a1f-orm-after-successful-signup-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-18a1f-orm-after-successful-signup-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-18a1f-orm-after-successful-signup-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                        "column": 30,
+                        "line": 76
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "66d8a20249bb48b38a0e-b6028ddc5ec3f94a38a7",
+              "file": "signup.spec.js",
+              "line": 66,
+              "column": 3
+            },
+            {
+              "title": "should allow same email for different activities",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5656,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:95:30",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                          "column": 30,
+                          "line": 95
+                        },
+                        "snippet": "  93 |\n  94 |     const messageDiv = page.locator('#message');\n> 95 |     await expect(messageDiv).toHaveClass('success');\n     |                              ^\n  96 |\n  97 |     // Wait for form to be ready\n  98 |     await page.waitForTimeout(1000);"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                            "column": 30,
+                            "line": 95
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  93 |\n  94 |     const messageDiv = page.locator('#message');\n> 95 |     await expect(messageDiv).toHaveClass('success');\n     |                              ^\n  96 |\n  97 |     // Wait for form to be ready\n  98 |     await page.waitForTimeout(1000);\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:95:30"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:11:54.814Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-bb37b-il-for-different-activities-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-bb37b-il-for-different-activities-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-bb37b-il-for-different-activities-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                        "column": 30,
+                        "line": 95
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "66d8a20249bb48b38a0e-3dac2df970eac5ce6dca",
+              "file": "signup.spec.js",
+              "line": 86,
+              "column": 3
+            },
+            {
+              "title": "should disable submit button during submission",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5643,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeDisabled\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('button[type=\"submit\"]')\nExpected: disabled\nReceived: enabled\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeDisabled\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('button[type=\"submit\"]')\u001b[22m\n\u001b[2m    9 × locator resolved to <button type=\"submit\">Sign Up</button>\u001b[22m\n\u001b[2m      - unexpected value \"enabled\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeDisabled\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('button[type=\"submit\"]')\nExpected: disabled\nReceived: enabled\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeDisabled\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('button[type=\"submit\"]')\u001b[22m\n\u001b[2m    9 × locator resolved to <button type=\"submit\">Sign Up</button>\u001b[22m\n\u001b[2m      - unexpected value \"enabled\"\u001b[22m\n\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:119:32",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                          "column": 32,
+                          "line": 119
+                        },
+                        "snippet": "  117 |\n  118 |     // Button should be disabled during submission\n> 119 |     await expect(submitButton).toBeDisabled();\n      |                                ^\n  120 |\n  121 |     // Wait for completion\n  122 |     const messageDiv = page.locator('#message');"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                            "column": 32,
+                            "line": 119
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoBeDisabled\u001b[2m(\u001b[22m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('button[type=\"submit\"]')\nExpected: disabled\nReceived: enabled\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toBeDisabled\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('button[type=\"submit\"]')\u001b[22m\n\u001b[2m    9 × locator resolved to <button type=\"submit\">Sign Up</button>\u001b[22m\n\u001b[2m      - unexpected value \"enabled\"\u001b[22m\n\n\n  117 |\n  118 |     // Button should be disabled during submission\n> 119 |     await expect(submitButton).toBeDisabled();\n      |                                ^\n  120 |\n  121 |     // Wait for completion\n  122 |     const messageDiv = page.locator('#message');\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:119:32"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:12:01.610Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-48386-it-button-during-submission-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-48386-it-button-during-submission-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-48386-it-button-during-submission-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                        "column": 32,
+                        "line": 119
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "66d8a20249bb48b38a0e-8fadb4d1186f3538ea9d",
+              "file": "signup.spec.js",
+              "line": 109,
+              "column": 3
+            },
+            {
+              "title": "should hide message after 5 seconds",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 10000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 12,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5736,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: not \u001b[32m\"hidden\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mhidden\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: not \u001b[32m\"hidden\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mhidden\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:137:34",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                          "column": 34,
+                          "line": 137
+                        },
+                        "snippet": "  135 |\n  136 |     const messageDiv = page.locator('#message');\n> 137 |     await expect(messageDiv).not.toHaveClass('hidden');\n      |                                  ^\n  138 |\n  139 |     // Wait for message to hide\n  140 |     await page.waitForTimeout(5500);"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                            "column": 34,
+                            "line": 137
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).not.\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: not \u001b[32m\"hidden\"\u001b[39m\nReceived: \u001b[31m\"\u001b[7mhidden\u001b[27m\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"not toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  135 |\n  136 |     const messageDiv = page.locator('#message');\n> 137 |     await expect(messageDiv).not.toHaveClass('hidden');\n      |                                  ^\n  138 |\n  139 |     // Wait for message to hide\n  140 |     await page.waitForTimeout(5500);\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:137:34"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:12:08.447Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-should-hide-message-after-5-seconds-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-should-hide-message-after-5-seconds-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-should-hide-message-after-5-seconds-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                        "column": 34,
+                        "line": 137
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "66d8a20249bb48b38a0e-ee32bc8a18bf87af3bd4",
+              "file": "signup.spec.js",
+              "line": 129,
+              "column": 3
+            },
+            {
+              "title": "should refresh activities list after signup",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 13,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 5597,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:160:30",
+                        "location": {
+                          "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                          "column": 30,
+                          "line": 160
+                        },
+                        "snippet": "  158 |     // Wait for success and refresh\n  159 |     const messageDiv = page.locator('#message');\n> 160 |     await expect(messageDiv).toHaveClass('success');\n      |                              ^\n  161 |\n  162 |     // Wait for the page to refresh activities\n  163 |     await page.waitForTimeout(1000);"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                            "column": 30,
+                            "line": 160
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoHaveClass\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator:  locator('#message')\nExpected: \u001b[32m\"success\"\u001b[39m\nReceived: \u001b[31m\"hidden\"\u001b[39m\nTimeout:  5000ms\n\nCall log:\n\u001b[2m  - Expect \"toHaveClass\" with timeout 5000ms\u001b[22m\n\u001b[2m  - waiting for locator('#message')\u001b[22m\n\u001b[2m    9 × locator resolved to <div id=\"message\" class=\"hidden\"></div>\u001b[22m\n\u001b[2m      - unexpected value \"hidden\"\u001b[22m\n\n\n  158 |     // Wait for success and refresh\n  159 |     const messageDiv = page.locator('#message');\n> 160 |     await expect(messageDiv).toHaveClass('success');\n      |                              ^\n  161 |\n  162 |     // Wait for the page to refresh activities\n  163 |     await page.waitForTimeout(1000);\n    at /home/josejuan/minimal-demo/tests/e2e/signup.spec.js:160:30"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2026-03-02T20:12:15.318Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-9595e-ctivities-list-after-signup-chromium/test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-9595e-ctivities-list-after-signup-chromium/video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "/home/josejuan/minimal-demo/test-results/signup-Activity-Signup-sho-9595e-ctivities-list-after-signup-chromium/error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "/home/josejuan/minimal-demo/tests/e2e/signup.spec.js",
+                        "column": 30,
+                        "line": 160
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "66d8a20249bb48b38a0e-84335a1d107b85578f56",
+              "file": "signup.spec.js",
+              "line": 144,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2026-03-02T20:10:41.197Z",
+    "duration": 99867.251,
+    "expected": 28,
+    "skipped": 0,
+    "unexpected": 14,
+    "flaky": 0
+  }
+}
